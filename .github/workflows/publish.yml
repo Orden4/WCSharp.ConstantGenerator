@@ -37,7 +37,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Pack project with GitVersion version
-        run: dotnet pack --configuration Release --no-build -o out /p:PackageVersion=${{ steps.gitversion.outputs.MajorMinorPatch }}
+        run: dotnet pack --configuration Release --no-build -o out /p:PackageVersion=${{ steps.gitversion.outputs.SemVer }}
 
       - name: Push to NuGet
         run: dotnet nuget push out/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
