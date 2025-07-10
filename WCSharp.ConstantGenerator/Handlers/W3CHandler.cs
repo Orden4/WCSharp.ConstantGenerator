@@ -67,7 +67,7 @@ public static class Cameras
 				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_LOCAL_ROLL, {camera.LocalRoll}f, 0);");
 			}
 
-			File.WriteAllText(output, string.Format(FILE, variables.ToString(), configuration.ToString()));
+			File.WriteAllText(output, string.Format(FILE.UseCurrentEnvironmentNewLine(), variables.ToString(), configuration.ToString()));
 		}
 
 		private static void Abort(string output)

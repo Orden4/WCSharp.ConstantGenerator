@@ -49,7 +49,7 @@ public static class Regions
 				variables.AppendLine($"\tpublic static Rectangle {name} {{ get; set; }} = new Rectangle({region.Left}f, {region.Bottom}f, {region.Right}f, {region.Top}f);");
 			}
 
-			File.WriteAllText(output, string.Format(FILE, variables.ToString()));
+			File.WriteAllText(output, string.Format(FILE.UseCurrentEnvironmentNewLine(), variables.ToString()));
 		}
 
 		private static void Abort(string output)
