@@ -2,12 +2,8 @@ mode: ContinuousDeployment
 branches:
   main:
     regex: ^main$
-    increment: Patch
+    increment: None
     track-merge-target: false
-    is-release-branch: true
-  release:
-    regex: ^release[/-]
-    increment: Minor
     is-release-branch: true
   develop:
     regex: ^dev(elop)?$
