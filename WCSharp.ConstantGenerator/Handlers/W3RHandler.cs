@@ -46,7 +46,7 @@ public static class Regions
 			{
 				var region = new Region(reader);
 				var name = region.Name.Escape();
-				variables.Append($"\tpublic static Rectangle {name} {{ get; set; }} = new Rectangle({region.Left}f, {region.Bottom}f, {region.Right}f, {region.Top}f);\r\n");
+				variables.AppendLine($"\tpublic static Rectangle {name} {{ get; set; }} = new Rectangle({region.Left}f, {region.Bottom}f, {region.Right}f, {region.Top}f);");
 			}
 
 			File.WriteAllText(output, string.Format(FILE, variables.ToString()));

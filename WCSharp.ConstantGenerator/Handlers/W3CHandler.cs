@@ -52,19 +52,19 @@ public static class Cameras
 			{
 				var camera = new Camera(reader);
 				var name = camera.Name.Escape();
-				variables.Append($"\tpublic static readonly camerasetup {name} = CreateCameraSetup();\r\n");
-				configuration.Append($"\t\tCameraSetupSetDestPosition({name}, {camera.TargetX}f, {camera.TargetY}f, 0);\r\n");
-				configuration.Append($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_ZOFFSET, {camera.ZOffset}f, 0);\r\n");
-				configuration.Append($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_ROTATION, {camera.Rotation}f, 0);\r\n");
-				configuration.Append($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_ANGLE_OF_ATTACK, {camera.AngleOfAttack}f, 0);\r\n");
-				configuration.Append($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_TARGET_DISTANCE, {camera.Distance}f, 0);\r\n");
-				configuration.Append($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_ROLL, {camera.Roll}f, 0);\r\n");
-				configuration.Append($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_FIELD_OF_VIEW, {camera.FoV}f, 0);\r\n");
-				configuration.Append($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_FARZ, {camera.FarZ}f, 0);\r\n");
-				configuration.Append($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_NEARZ, {camera.NearZ}f, 0);\r\n");
-				configuration.Append($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_LOCAL_PITCH, {camera.LocalPitch}f, 0);\r\n");
-				configuration.Append($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_LOCAL_YAW, {camera.LocalYaw}f, 0);\r\n");
-				configuration.Append($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_LOCAL_ROLL, {camera.LocalRoll}f, 0);\r\n");
+				variables.AppendLine($"\tpublic static readonly camerasetup {name} = CreateCameraSetup();");
+				configuration.AppendLine($"\t\tCameraSetupSetDestPosition({name}, {camera.TargetX}f, {camera.TargetY}f, 0);");
+				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_ZOFFSET, {camera.ZOffset}f, 0);");
+				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_ROTATION, {camera.Rotation}f, 0);");
+				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_ANGLE_OF_ATTACK, {camera.AngleOfAttack}f, 0);");
+				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_TARGET_DISTANCE, {camera.Distance}f, 0);");
+				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_ROLL, {camera.Roll}f, 0);");
+				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_FIELD_OF_VIEW, {camera.FoV}f, 0);");
+				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_FARZ, {camera.FarZ}f, 0);");
+				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_NEARZ, {camera.NearZ}f, 0);");
+				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_LOCAL_PITCH, {camera.LocalPitch}f, 0);");
+				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_LOCAL_YAW, {camera.LocalYaw}f, 0);");
+				configuration.AppendLine($"\t\tCameraSetupSetField({name}, CAMERA_FIELD_LOCAL_ROLL, {camera.LocalRoll}f, 0);");
 			}
 
 			File.WriteAllText(output, string.Format(FILE, variables.ToString(), configuration.ToString()));

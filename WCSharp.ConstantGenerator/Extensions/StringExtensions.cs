@@ -38,5 +38,10 @@ namespace WCSharp.ConstantGenerator.Extensions
 
 			return @string;
 		}
+
+		public static string UseCurrentEnvironmentNewLine(this string @string)
+		{
+			return string.Join(Environment.NewLine, @string.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries));
+		}
 	}
 }
