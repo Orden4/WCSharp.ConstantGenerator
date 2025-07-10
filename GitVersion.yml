@@ -1,0 +1,17 @@
+mode: ContinuousDeployment
+branches:
+  main:
+    regex: ^main$
+    increment: Patch
+    track-merge-target: false
+    is-release-branch: true
+  release:
+    regex: ^release[/-]
+    increment: Minor
+    is-release-branch: true
+  develop:
+    regex: ^dev(elop)?$
+    increment: None
+    is-source-branch-for: ['main']
+ignore:
+  sha: []
