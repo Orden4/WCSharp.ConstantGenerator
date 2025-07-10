@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>9.0</LangVersion>
     <DocumentationFile>WCSharp.ConstantGenerator.xml</DocumentationFile>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseFile>..\LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Orden4/WCSharp.ConstantGenerator</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Orden4/WCSharp.ConstantGenerator</RepositoryUrl>
     <PackageReleaseNotes>See the full release notes on the wiki: https://github.com/Orden4/WCSharp/wiki/Release-notes</PackageReleaseNotes>
@@ -17,7 +17,7 @@ The ConstantGenerator can be ran during map development to generate a number of 
 
   <ItemGroup>
     <None Remove="additional-constants.csv" />
-    <None Include="..\..\LICENSE">
+    <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
