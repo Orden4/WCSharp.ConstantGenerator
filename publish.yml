@@ -3,7 +3,7 @@ name: Publish NuGet Package
 on:
   push:
     branches:
-      - 'develop'
+      - 'experimental/**'
     tags:
       - 'v*'
 
@@ -15,15 +15,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Install GitVersion
         uses: GitTools/actions/gitversion/setup@v4
 
       - name: Run GitVersion
         id: gitversion
-        uses: GitTools/actions/gitversion/execute@v4
+        uses: GitTools/actions/gitversion/execute@v6.3
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4

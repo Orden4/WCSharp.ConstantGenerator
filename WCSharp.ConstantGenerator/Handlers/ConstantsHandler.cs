@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Reflection;
 
 namespace WCSharp.ConstantGenerator.Handlers
@@ -33,7 +34,7 @@ namespace WCSharp.ConstantGenerator.Handlers
 			var assembly = Assembly.GetExecutingAssembly();
 			using var stream = assembly.GetManifestResourceStream(ADDITIONAL_CONSTANTS_FILE);
 			using var reader = new StreamReader(stream);
-			var additionalConstants = reader.ReadToEnd().Split("\r\n");
+			var additionalConstants = reader.ReadToEnd().Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 			constantsFile.ParseAdditionalConstants(additionalConstants);
 
 			return constantsFile;
