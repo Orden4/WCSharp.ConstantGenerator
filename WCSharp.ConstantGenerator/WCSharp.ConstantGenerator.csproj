@@ -16,7 +16,6 @@ The ConstantGenerator can be ran during map development to generate a number of 
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="additional-constants.csv" />
     <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
