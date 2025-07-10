@@ -1,6 +1,9 @@
 name: Publish NuGet Package
 
-on: push
+on:
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   build-and-publish:
